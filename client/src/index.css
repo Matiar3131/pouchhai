@@ -1,11 +1,377 @@
 @import "tailwindcss";
 
-/* আপনার কাস্টম সিএসএস বা বডি স্টাইল থাকলে নিচে দিতে পারেন */
-body {
-  background-color: #020617; /* bg-slate-950 এর হেক্স কোড */
-  color: white;
-  margin: 0;
+/* ============================================
+   WINDOWS 2000 / MICROSOFT CLASSIC THEME
+   ============================================ */
+
+:root {
+  /* Win2K System Colors */
+  --color-win-bg: #d4d0c8;
+  --color-win-surface: #d4d0c8;
+  --color-win-titlebar: #000080;
+  --color-win-titlebar-end: #1084d0;
+  --color-win-titlebar-inactive: #808080;
+  --color-win-text: #000000;
+  --color-win-text-muted: #444444;
+  --color-win-white: #ffffff;
+  --color-win-border-light: #ffffff;
+  --color-win-border-dark: #808080;
+  --color-win-border-darker: #404040;
+  --color-win-highlight: #0a246a;
+  --color-win-highlight-text: #ffffff;
+  --color-win-button-face: #d4d0c8;
+  --color-win-button-shadow: #808080;
+  --color-win-button-highlight: #ffffff;
+  --color-win-button-darkshadow: #000000;
+  --color-win-scrollbar: #c0c0c0;
+  --color-win-accent: #000080;
+
+  /* Semantic tokens */
+  --background: var(--color-win-bg);
+  --foreground: var(--color-win-text);
+  --surface: var(--color-win-surface);
+  --border: var(--color-win-border-dark);
+  --accent: var(--color-win-accent);
+  --radius: 0rem;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #3a6ea5;
+  color: var(--color-win-text);
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  font-size: 11px;
+  margin: 0;
+}
+
+/* ---- Win2K Beveled / 3D Border Utilities ---- */
+
+.win-raised {
+  border-top: 2px solid var(--color-win-border-light);
+  border-left: 2px solid var(--color-win-border-light);
+  border-right: 2px solid var(--color-win-border-darker);
+  border-bottom: 2px solid var(--color-win-border-darker);
+}
+
+.win-sunken {
+  border-top: 2px solid var(--color-win-border-darker);
+  border-left: 2px solid var(--color-win-border-darker);
+  border-right: 2px solid var(--color-win-border-light);
+  border-bottom: 2px solid var(--color-win-border-light);
+}
+
+.win-inset {
+  border-top: 1px solid var(--color-win-border-dark);
+  border-left: 1px solid var(--color-win-border-dark);
+  border-right: 1px solid var(--color-win-border-light);
+  border-bottom: 1px solid var(--color-win-border-light);
+}
+
+.win-outset {
+  border-top: 1px solid var(--color-win-border-light);
+  border-left: 1px solid var(--color-win-border-light);
+  border-right: 1px solid var(--color-win-border-dark);
+  border-bottom: 1px solid var(--color-win-border-dark);
+}
+
+/* ---- Classic Window Panel ---- */
+.win-panel {
+  background-color: var(--color-win-bg);
+  padding: 2px;
+  border-top: 2px solid var(--color-win-border-light);
+  border-left: 2px solid var(--color-win-border-light);
+  border-right: 2px solid var(--color-win-border-darker);
+  border-bottom: 2px solid var(--color-win-border-darker);
+}
+
+/* ---- Title Bar ---- */
+.win-titlebar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.win-titlebar-btn {
+  background: var(--color-win-button-face);
+  color: #000;
+  font-size: 10px;
+  font-weight: bold;
+  width: 16px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-top: 1px solid var(--color-win-border-light);
+  border-left: 1px solid var(--color-win-border-light);
+  border-right: 1px solid var(--color-win-border-darker);
+  border-bottom: 1px solid var(--color-win-border-darker);
+  font-family: 'Marlett', 'Tahoma', sans-serif;
+}
+
+.win-titlebar-btn:active {
+  border-top: 1px solid var(--color-win-border-darker);
+  border-left: 1px solid var(--color-win-border-darker);
+  border-right: 1px solid var(--color-win-border-light);
+  border-bottom: 1px solid var(--color-win-border-light);
+}
+
+/* ---- Classic Button ---- */
+.win-btn {
+  background-color: var(--color-win-button-face);
+  color: #000;
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  font-size: 11px;
+  padding: 4px 14px;
+  cursor: pointer;
+  border-top: 2px solid var(--color-win-border-light);
+  border-left: 2px solid var(--color-win-border-light);
+  border-right: 2px solid var(--color-win-border-darker);
+  border-bottom: 2px solid var(--color-win-border-darker);
+  outline: 1px solid var(--color-win-border-dark);
+  white-space: nowrap;
+}
+
+.win-btn:active {
+  border-top: 2px solid var(--color-win-border-darker);
+  border-left: 2px solid var(--color-win-border-darker);
+  border-right: 2px solid var(--color-win-border-light);
+  border-bottom: 2px solid var(--color-win-border-light);
+  padding: 5px 13px 3px 15px;
+}
+
+.win-btn:disabled {
+  color: var(--color-win-border-dark);
+  cursor: default;
+}
+
+.win-btn-default {
+  outline: 2px solid #000;
+}
+
+/* ---- Classic Input ---- */
+.win-input {
+  background: #ffffff;
+  color: #000;
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  font-size: 11px;
+  padding: 2px 4px;
+  border-top: 2px solid var(--color-win-border-darker);
+  border-left: 2px solid var(--color-win-border-darker);
+  border-right: 2px solid var(--color-win-border-light);
+  border-bottom: 2px solid var(--color-win-border-light);
+  outline: none;
+  width: 100%;
+}
+
+.win-input:focus {
+  outline: 1px dotted #000;
+}
+
+.win-select {
+  background: #ffffff;
+  color: #000;
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  font-size: 11px;
+  padding: 2px 4px;
+  border-top: 2px solid var(--color-win-border-darker);
+  border-left: 2px solid var(--color-win-border-darker);
+  border-right: 2px solid var(--color-win-border-light);
+  border-bottom: 2px solid var(--color-win-border-light);
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ---- Groupbox ---- */
+.win-groupbox {
+  border: 1px solid var(--color-win-border-dark);
+  padding: 16px 12px 10px;
+  margin-top: 12px;
+  position: relative;
+  background: var(--color-win-bg);
+}
+
+.win-groupbox-label {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  background: var(--color-win-bg);
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif;
+}
+
+/* ---- Separator / Divider ---- */
+.win-separator {
+  border: none;
+  border-top: 1px solid var(--color-win-border-dark);
+  border-bottom: 1px solid var(--color-win-border-light);
+  margin: 4px 0;
+}
+
+/* ---- Status Bar ---- */
+.win-statusbar {
+  background: var(--color-win-bg);
+  border-top: 2px solid var(--color-win-border-darker);
+  padding: 2px 6px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ---- Menubar ---- */
+.win-menubar {
+  background: var(--color-win-bg);
+  border-bottom: 1px solid var(--color-win-border-dark);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  font-size: 11px;
+}
+
+.win-menubar-item {
+  padding: 2px 8px;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+}
+
+.win-menubar-item:hover {
+  background: var(--color-win-highlight);
+  color: var(--color-win-highlight-text);
+}
+
+/* ---- Listbox style ---- */
+.win-listbox {
+  background: #fff;
+  border-top: 2px solid var(--color-win-border-darker);
+  border-left: 2px solid var(--color-win-border-darker);
+  border-right: 2px solid var(--color-win-border-light);
+  border-bottom: 2px solid var(--color-win-border-light);
+  overflow-y: auto;
+}
+
+/* ---- Checkbox / Radio classic ---- */
+.win-checkbox {
+  accent-color: var(--color-win-highlight);
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 16px; height: 16px; }
+::-webkit-scrollbar-track { background: var(--color-win-scrollbar); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-win-bg);
+  border-top: 1px solid var(--color-win-border-light);
+  border-left: 1px solid var(--color-win-border-light);
+  border-right: 1px solid var(--color-win-border-dark);
+  border-bottom: 1px solid var(--color-win-border-dark);
+}
+
+/* ---- Desktop Wallpaper gradient (like Win2K Bliss-ish) ---- */
+.win-desktop {
+  background: #3a6ea5;
+  min-height: 100vh;
+}
+
+/* ---- Tooltip ---- */
+.win-tooltip {
+  background: #ffffe1;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 11px;
+  padding: 2px 4px;
+  pointer-events: none;
+}
+
+/* ---- Tab control ---- */
+.win-tab {
+  background: var(--color-win-bg);
+  border-top: 1px solid var(--color-win-border-light);
+  border-left: 1px solid var(--color-win-border-light);
+  border-right: 1px solid var(--color-win-border-dark);
+  border-bottom: none;
+  padding: 3px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  position: relative;
+  top: 1px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.win-tab.active {
+  background: var(--color-win-bg);
+  z-index: 1;
+  font-weight: bold;
+  border-bottom: 1px solid var(--color-win-bg);
+}
+
+.win-tab-body {
+  border: 1px solid var(--color-win-border-dark);
+  background: var(--color-win-bg);
+  padding: 12px;
+}
+
+/* ---- Icon 16x16 area ---- */
+.win-icon-sm {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---- Bold "selected" row ---- */
+.win-selected-row {
+  background: var(--color-win-highlight);
+  color: var(--color-win-highlight-text);
+}
+
+/* ---- Progress bar ---- */
+.win-progress {
+  background: #fff;
+  border-top: 2px solid var(--color-win-border-darker);
+  border-left: 2px solid var(--color-win-border-darker);
+  border-right: 2px solid var(--color-win-border-light);
+  border-bottom: 2px solid var(--color-win-border-light);
+  height: 14px;
+  overflow: hidden;
+}
+
+.win-progress-fill {
+  background: var(--color-win-highlight);
+  height: 100%;
+  transition: width 0.3s;
+}
+
+/* ---- Ticker tape marquee ---- */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.win-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.win-marquee span {
+  display: inline-block;
+  animation: marquee 18s linear infinite;
 }
