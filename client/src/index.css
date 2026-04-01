@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* আপনার কাস্টম সিএসএস বা বডি স্টাইল থাকলে নিচে দিতে পারেন */
+body {
+  background-color: #020617; /* bg-slate-950 এর হেক্স কোড */
+  color: white;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
