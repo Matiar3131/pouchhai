@@ -45,7 +45,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToHash />
-      <div className="flex flex-col min-h-screen bg-[#020617]">
+      <div className="flex flex-col min-h-screen" style={{ background: '#3a6ea5' }}>
         <Navbar /> 
         <main className="flex-grow">
           <Routes>
