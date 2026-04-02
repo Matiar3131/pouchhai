@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
+import { registerSW } from 'virtual:pwa-register'
 
+registerSW({ immediate: true })
 
 // গ্লোবাল ভ্যারিয়েবল হিসেবে root এলিমেন্টটি ধরা
 const rootElement = document.getElementById('root');

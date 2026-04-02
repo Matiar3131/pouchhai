@@ -7,6 +7,9 @@ import Auth from './pages/Auth';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Pricing from './pages/Pricing';
+import { registerSW } from 'virtual:pwa-register'
+
+registerSW({ immediate: true })
 // পেজগুলো ইমপোর্ট করুন (নিশ্চিত করুন এই ফাইলগুলো আপনি তৈরি করেছেন)
 import Home from './pages/Home';
 import Home1 from './pages/Home1'; // ইনভেন্টরি ভার্সন
