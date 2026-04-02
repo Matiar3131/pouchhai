@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
         
         {/* React Icons ব্যবহার করে সোশ্যাল আইকন */}
         <div className="flex gap-6">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-slate-500">
+          <a href="https://www.facebook.com/pouchhaiofficial" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-slate-500">
             <FaFacebook size={18} />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-slate-500">
