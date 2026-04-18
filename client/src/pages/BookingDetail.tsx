@@ -2,8 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabase/supabaseClient';
 import { ArrowLeft, MapPin, Phone, Calendar, CreditCard, CheckCircle2, Truck, Info, Download } from 'lucide-react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+
+// ভবিষ্যতে PDF এর জন্য নিচের দুটি লাইব্রেরি ইন্সটল করে আন-কমেন্ট করতে হবে
+// import jsPDF from 'jspdf';
+// import html2canvas from 'html2canvas';
 
 const BookingDetail = () => {
   const { id } = useParams();
@@ -26,8 +28,11 @@ const BookingDetail = () => {
     fetchDetail();
   }, [id]);
 
-  // PDF জেনারেট করার ফাংশন
+  // PDF জেনারেট করার ফাংশন (বর্তমানে নিষ্ক্রিয়)
   const handleDownloadInvoice = async () => {
+    alert("Invoice download feature is currently disabled. Please enable libraries to use this.");
+    
+    /* // ভবিষ্যতে ব্যবহারের জন্য কোড:
     if (!invoiceRef.current) return;
     setIsGenerating(true);
     
@@ -51,10 +56,11 @@ const BookingDetail = () => {
     } finally {
       setIsGenerating(false);
     }
+    */
   };
 
   if (loading) return <div className="min-h-screen bg-[#020617] flex items-center justify-center text-indigo-500 font-bold uppercase tracking-widest animate-pulse font-sans">Loading Details...</div>;
-  if (!booking) return <div className="text-white font-sans p-20 text-center">বুকিং পাওয়া যায়নি!</div>;
+  if (!booking) return <div className="text-white font-sans p-20 text-center">বুকিং পাওয়া যায়নি!</div>;
 
   return (
     <div className="min-h-screen bg-[#020617] text-white p-6 md:p-16 font-sans">
@@ -147,7 +153,7 @@ const BookingDetail = () => {
         </div>
       </div>
 
-      {/* --- Hidden Invoice Template for PDF Generation --- */}
+      {/* --- Hidden Invoice Template (Will be used when PDF libraries are enabled) --- */}
       <div className="absolute -left-[9999px] top-0">
         <div ref={invoiceRef} className="w-[800px] p-16 bg-[#020617] text-white font-sans border-4 border-indigo-600/20">
           <div className="flex justify-between items-start border-b border-white/10 pb-10 mb-10">
@@ -157,7 +163,7 @@ const BookingDetail = () => {
             </div>
             <div className="text-right">
               <h2 className="text-2xl font-black uppercase tracking-widest text-indigo-500">Invoice</h2>
-              <p className="text-slate-500 mt-1">#{booking.id.slice(0, 8)}</p>
+              <p className="text-slate-500 mt-1">#{booking.id?.slice(0, 8)}</p>
             </div>
           </div>
 
@@ -184,21 +190,13 @@ const BookingDetail = () => {
             <tbody className="divide-y divide-white/5">
               <tr>
                 <td className="py-6">
-                  <p className="font-bold text-lg">{booking.shift_type.toUpperCase()} SHIFTING</p>
+                  <p className="font-bold text-lg">{booking.shift_type?.toUpperCase()} SHIFTING</p>
                   <p className="text-xs text-slate-500 mt-1">Comprehensive logistics and equipment handling</p>
                 </td>
                 <td className="py-6 text-right font-black text-2xl text-indigo-400 font-sans">৳{booking.estimated_cost?.toLocaleString()}</td>
               </tr>
             </tbody>
           </table>
-
-          <div className="bg-white/5 p-8 rounded-3xl border border-white/10 text-center">
-            <p className="text-sm text-slate-400 italic">"Thank you for choosing Pouchhai. We ensure a smooth and safe move for your legacy."</p>
-            <div className="mt-6 flex justify-center gap-10 opacity-50 grayscale">
-               <span className="text-[10px] font-bold uppercase tracking-tighter">Verified Logistics</span>
-               <span className="text-[10px] font-bold uppercase tracking-tighter">Secure Move</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
