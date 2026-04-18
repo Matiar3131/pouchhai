@@ -3,7 +3,7 @@ import { Truck, MessageCircle, Menu, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
-  const whatsappNumber = "+8801XXXXXXXXX"; 
+  const whatsappNumber = "+8801612027631"; 
   const whatsappLink = `https://wa.me/${whatsappNumber.replace('+', '')}?text=Hello Pouchhai, I need a shifting quote.`;
 
   return (
