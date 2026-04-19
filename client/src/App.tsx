@@ -9,7 +9,7 @@ import Privacy from './pages/Privacy';
 import Pricing from './pages/Pricing';
 // পেজগুলো ইমপোর্ট করুন (নিশ্চিত করুন এই ফাইলগুলো আপনি তৈরি করেছেন)
 //import Home from './pages/Home';
-import Home1 from './pages/Home1'; // ইনভেন্টরি ভার্সন
+//import Home1 from './pages/Home1'; // ইনভেন্টরি ভার্সন
 import Home2 from './pages/Home2'; // প্যাকেজ ভার্সন
 import Home3 from './pages/Home3'; // মিডিয়া ভার্সন
 import Home4 from './pages/Home4'; // মিডিয়া ভার্সন
@@ -53,7 +53,7 @@ const App: React.FC = () => {
            {/* <Route path="/" element={<Home />} />*/}
             
             {/* আলাদা আলাদা টেস্টিং ভার্সন */}
-            <Route path="/" element={<Home1 />} /> 
+            <Route path="/" element={<Home2 />} /> 
           {/*  <Route path="/v2" element={<Home2 />} /> */}
            {/* <Route path="/v3" element={<Home3 />} /> */}
             
