@@ -53,7 +53,7 @@ const App: React.FC = () => {
            {/* <Route path="/" element={<Home />} />*/}
             
             {/* আলাদা আলাদা টেস্টিং ভার্সন */}
-            <Route path="/" element={<Home2 />} /> 
+            <Route path="/" element={<Home8 />} /> 
           {/*  <Route path="/v2" element={<Home2 />} /> */}
            {/* <Route path="/v3" element={<Home3 />} /> */}
             
