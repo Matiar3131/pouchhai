@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Support</h4>
           <ul className="space-y-3 text-sm text-slate-400 list-none p-0">
-            <li className="flex items-center gap-2 font-sans"><Phone size={14} className="text-indigo-400" /> +880 1XXX-XXXXXX</li>
+            <li className="flex items-center gap-2 font-sans"><Phone size={14} className="text-indigo-400" /> +880 1752226584</li>
             <li className="flex items-center gap-2 font-sans"><Mail size={14} className="text-indigo-400" /> support@pouchhai.com</li>
             <li><Link to="/privacy" className="hover:text-indigo-400 transition text-xs no-underline">প্রাইভেসি পলিসি</Link></li>
           </ul>
